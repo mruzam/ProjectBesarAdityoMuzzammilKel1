@@ -3,7 +3,7 @@
 #include <ctime>
 using namespace std;
 
-// Fungsi permainan
+// Game systems
 int rule(char p, char c){
     if (p == c){
         return 0;
