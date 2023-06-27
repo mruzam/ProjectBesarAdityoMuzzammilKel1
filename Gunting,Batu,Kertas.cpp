@@ -30,7 +30,7 @@ int rule(char p, char c){
     else if (p != 'p' || p != 's' || p != 'r'){
     	return -2;
 	}
-}// Jika -1 maka kalah, jika 1 maka menang, jika -2 tidak ada pilihan yang benar
+}// If -1 then lose, If 1 then won, if -2 draw
 
 int main(){
 	int scorePlayer = 0;
@@ -39,7 +39,7 @@ int main(){
     char player;
     char playmore;
 
-    // Menampilkan judul permainan
+    // Displays the game title
     cout << "\t\t\t\t";
     for(int i = 0; i < 50; i++){
         cout << "-";
@@ -53,7 +53,7 @@ int main(){
     }
     cout << endl;
 
-    // Menampilkan instruksi dan pilihan gunting, batu, kertas
+    // Displays instructions and options for scissors, rock, paper
     cout << "\t\t\t\t";
     cout << "\t Note: " << endl;
     cout << "\t\t\t\t";
@@ -67,11 +67,11 @@ int main(){
     do {
         int number = 0;
 
-        // Menghasilkan bilangan acak antara 0 - 99
+        // Generates a random number between 0 - 99
         srand(time(0));
         number = rand() % 100;
 
-        // Memilih pilihan komputer berdasarkan bilangan acak
+        // Choose computer options based on random numbers
         if (number < 33) {
             computer = 'r';
         } else if (number > 66) {
@@ -80,19 +80,19 @@ int main(){
             computer = 'p';
         }
 
-        // Meminta input pilihan pemain
+        // Requesting Player input
         cout << "\t\t\t\t";
         cout << "Enter your choice: ";
         cin >> player;
 
-        // Memanggil fungsi rule untuk menentukan hasil permainan
+        // Call the rule function to determine the result of the game
         int result = rule(player, computer);
 
-        // Menampilkan hasil permainan
+        // Displays the results
         if(result == 1){
             cout << "\t\t\t\t";
             cout << "You won! Hurray" << endl;
-            //penambahan score player
+            //additional score player
             scorePlayer++;
             cout << "\t\t\t\t[Player] : "<<scorePlayer<<" [Computer] : "<<scoreComputer<<endl;
         }
@@ -114,14 +114,16 @@ int main(){
             cout << "\t\t\t\t[Player] : "<<scorePlayer<<" [Computer] : "<<scoreComputer<<endl;
         }
 
-        // Menanyakan apakah pemain ingin bermain lagi
+        // Asks if the player wants to play again
+
         cout << "\t\t\t\t";
         cout << "Do you want to Play Again?" << endl;
         cout << "\t\t\t\t";
         cout << "Note: Press 'n' to exit! Press 'y' to continue: ";
         cin >> playmore;
 
-        // Menampilkan pemisah antara putaran permainan
+        // Displays the separator between game rounds
+
         cout << "\t\t\t\t";
         for(int i = 0; i < 50; i++){
             cout << "-";
